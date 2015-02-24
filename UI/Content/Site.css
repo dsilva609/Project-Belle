@@ -1,0 +1,91 @@
+﻿body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+.dl-horizontal dt {
+	white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+	max-width: 280px;
+}
+
+.bold {
+	font-weight: bold !important;
+}
+
+.removePaddingLeftRight {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.table .row:not(:first-child):hover {
+	background-color: ButtonShadow;
+	cursor: pointer;
+}
+.btn-link {
+	height: 20px;
+	vertical-align: top;
+	padding: 0;
+	margin-top: -1px;
+}
+.card {
+	background-color: saddlebrown;
+	float: left;
+	width: 100px;
+	height: 100px;
+	border: double;
+	z-index: 1;
+}
+
+#droppable {
+	float: left;
+	z-index: 0;
+}
+
+.green {
+	background-color: forestgreen !important;
+}
+
+.centerPiece {
+	background-color: red;
+	text-align: center;
+	width: 350px;
+	height: 200px;
+	margin-left: 33%;
+}
+
+.deck {
+	background-color: gray;
+	width: 100px;
+	height: 125px;
+	margin: 30px;
+}
+
+.discard {
+	background-color: gray;
+	width: 100px;
+	height: 125px;
+	margin: -155px 0 0 220px;
+}
+
+.mainPlayer {
+	background-color: violet;
+	text-align: center;
+	width: 600px;
+	height: 200px;
+	margin: 20%;
+}

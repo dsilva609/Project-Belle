@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BusinessLogic.Models.Card>
+
+@{
+	ViewBag.Title = "Cards";
+}
+<script>
+	var redirectURL = '@Url.Action(MVC.Card.RedirectUser())';
+	var deleteURL = '@Url.Action(MVC.Card.Delete())';
+</script>
+
+<h2>Cards</h2>
+@if (User.IsInRole("Admin"))
+{
+<p>
+	@Html.ActionLink("Create New", MVC.Card.Create())
+</p>
+}
+<div class="table">
+	<div class="bold row">
+		<div id="cardNameHeader" class="col-lg-3 removePaddingLeftRight">
+			@Html.DisplayNameFor(model => model.Name)
+		</div>
+		<div class="col-lg-3 removePaddingLeftRight">
+			@Html.DisplayNameFor(model => model.Description)
+		</div>
+		<div id="cardExpansionHeader" class="col-lg-2 removePaddingLeftRight">
+			@Html.DisplayNameFor(model => model.Expansion)
+		</div>
+		<div id="cardTypeHeader" class="col-lg-1 removePaddingLeftRight">
+			@Html.DisplayNameFor(model => model.Cardtype)
+		</div>
+		<div class="col-lg-3 removePaddingLeftRight">
+			@Html.DisplayNameFor(model => model.IsActive)
+		</div>
+	</div>
+	@foreach (var item in Model)
+	{
+		<div id="card" class="row" data-id="@item.ID">
+			<div class="col-lg-3 removePaddingLeftRight">
+				@Html.DisplayFor(modelItem => item.Name)
+			</div>
+			<div class="col-lg-3 removePaddingLeftRight">
+				@Html.DisplayFor(modelItem => item.Description)
+			</div>
+			<div class="col-lg-2 removePaddingLeftRight">
+				@Html.DisplayFor(modelItem => item.ExpansionString)
+			</div>
+			<div class="col-lg-1 removePaddingLeftRight">
+				@Html.DisplayFor(modelItem => item.CardTypeString)
+			</div>
+			<div class="col-lg-1 removePaddingLeftRight">
+				@Html.DisplayFor(modelItem => item.IsActive)
+			</div>
+			@if (User.IsInRole("Admin"))
+			{
+				<div class="col-lg-2 removePaddingLeftRight">
+					<input id="deleteCard" class="btn btn-link btn-link-height" type="button" data-id="@item.ID" value="Delete" />
+				</div>
+			}
+		</div>
+	}
+</div>

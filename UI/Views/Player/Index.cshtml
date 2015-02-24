@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BusinessLogic.Models.Player>
+
+@{
+	ViewBag.Title = "Players";
+}
+<script>
+	var redirectURL = '@Url.Action(MVC.Player.RedirectUser())';
+	var deleteURL = '@Url.Action(MVC.Player.Delete())';
+</script>
+
+<h2>Players</h2>
+@if (User.IsInRole("Admin"))
+{
+	<p>
+		@Html.ActionLink("Add New", MVC.Player.Create())
+	</p>
+}
+<div class="table">
+	<div class="bold row">
+		<div id="playerNameHeader" class="col-lg-6">
+			@Html.DisplayNameFor(model => model.Name)
+		</div>
+		<div class="col-lg-6">
+			@Html.DisplayNameFor(model => model.IsActive)
+		</div>
+	</div>
+	@foreach (var item in Model)
+	{
+		<div id="player" class="row" data-id="@item.ID">
+			@Html.HiddenFor(p => item.ID)
+			<div class="col-lg-6">
+				@Html.DisplayFor(modelItem => item.Name)
+			</div>
+			<div class="col-lg-3">
+				@Html.DisplayFor(modelItem => item.IsActive)
+			</div>
+			@if (User.IsInRole("Admin"))
+			{
+				<div class="col-lg-3">
+					<input id="deletePlayer" class="btn btn-link btn-link-height" type="button" data-id="@item.ID" value="Delete" />
+				</div>
+			}
+		</div>
+	}
+</div>

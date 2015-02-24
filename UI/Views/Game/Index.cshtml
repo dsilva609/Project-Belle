@@ -1,0 +1,29 @@
+﻿@model List<BusinessLogic.Models.Card>
+
+<h1>Cards</h1>
+
+@for (int i = 0; i < 5; i++)
+{
+	<div id="card" class="card">
+		@Html.DisplayFor(x => Model.ElementAt(i).Name)
+	</div>
+}
+
+<div class="card green" id="droppable">
+	Drop Zone
+</div>
+
+<div class="centerPiece">
+	Card Area
+	<div class="deck">
+		Deck
+	</div>
+
+	<div class="discard" id="droppable">
+		Discard
+	</div>
+</div>
+
+<div class="mainPlayer">
+	Player Area
+</div>
