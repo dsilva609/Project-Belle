@@ -17,7 +17,7 @@ namespace UI.Controllers
 
 		public PlayerController()
 		{
-			this._Uow = new UnitOfWork<ProjectArielContext>();
+			this._Uow = new UnitOfWork<ProjectBelleContext>();
 			this._Service = new PlayerService(this._Uow);
 		}
 

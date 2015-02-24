@@ -4,14 +4,14 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace BusinessLogic.DAL
 {
-	public class ProjectArielContext : DbContext
+	public class ProjectBelleContext : DbContext
 	{
 		public DbSet<Player> Players { get; set; }
 
 		public DbSet<Card> Cards { get; set; }
 
-		public ProjectArielContext()
-			: base("ProjectAriel")
+		public ProjectBelleContext()
+			: base("ProjectBelle")
 		{
 			this.Configuration.LazyLoadingEnabled = false;
 		}

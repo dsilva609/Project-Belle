@@ -4,14 +4,14 @@ namespace BusinessLogic.Migrations
 	using BusinessLogic.Models;
 	using System.Data.Entity.Migrations;
 
-	internal sealed class Configuration : DbMigrationsConfiguration<BusinessLogic.DAL.ProjectArielContext>
+	internal sealed class Configuration : DbMigrationsConfiguration<BusinessLogic.DAL.ProjectBelleContext>
 	{
 		public Configuration()
 		{
 			AutomaticMigrationsEnabled = false;
 		}
 
-		protected override void Seed(BusinessLogic.DAL.ProjectArielContext context)
+		protected override void Seed(BusinessLogic.DAL.ProjectBelleContext context)
 		{
 			context.Players.AddOrUpdate(x => x.Name,
 				 new Player { Name = "Smitty Werbenjagermanjensen", ID = 1, IsActive = true },

@@ -20,7 +20,7 @@ namespace UI.Models
 	public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 	{
 		public ApplicationDbContext()
-			: base("ProjectAriel", throwIfV1Schema: false)
+			: base("ProjectBelle", throwIfV1Schema: false)
 		{
 		}
 

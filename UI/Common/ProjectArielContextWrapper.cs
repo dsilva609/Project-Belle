@@ -5,9 +5,9 @@ using System.Data.Entity;
 
 namespace UI.Common
 {
-	public class ProjectArielContextWrapper : IDisposable
+	public class ProjectBelleContextWrapper : IDisposable
 	{
-		public ProjectArielContext Database { private get; set; }
+		public ProjectBelleContext Database { private get; set; }
 
 		public void Dispose()
 		{

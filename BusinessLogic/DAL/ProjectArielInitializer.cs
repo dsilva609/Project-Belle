@@ -4,9 +4,9 @@ using System.Data.Entity;
 
 namespace BusinessLogic.DAL
 {
-	public class ProjectArielInitializer : DropCreateDatabaseIfModelChanges<ProjectArielContext>
+	public class ProjectBelleInitializer : DropCreateDatabaseIfModelChanges<ProjectBelleContext>
 	{
-		protected override void Seed(ProjectArielContext context)
+		protected override void Seed(ProjectBelleContext context)
 		{
 			var players = new List<Player>
 			{

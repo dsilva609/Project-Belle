@@ -12,7 +12,7 @@ namespace UI.Controllers
 
 		public GameController()
 		{
-			this._Uow = new UnitOfWork<ProjectArielContext>();
+			this._Uow = new UnitOfWork<ProjectBelleContext>();
 			this._CardService = new CardService(this._Uow);
 		}
 
