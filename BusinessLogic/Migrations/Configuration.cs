@@ -1,5 +1,6 @@
 namespace BusinessLogic.Migrations
 {
+	using BusinessLogic.Enums;
 	using BusinessLogic.Models;
 	using System.Data.Entity.Migrations;
 
@@ -21,7 +22,16 @@ namespace BusinessLogic.Migrations
 
 			#region Cards
 
-			//
+			context.Cards.AddOrUpdate(x => x.Name,
+				new Card { Name = "Guard", ID = 1, Rank = Rank.One, IsActive = true },
+				new Card { Name = "Priest", ID = 2, Rank = Rank.Two, IsActive = true },
+				new Card { Name = "Baron", ID = 3, Rank = Rank.Three, IsActive = true },
+				new Card { Name = "Handmaid", ID = 4, Rank = Rank.Four, IsActive = true },
+				new Card { Name = "Prince", ID = 5, Rank = Rank.Five, IsActive = true },
+				new Card { Name = "King", ID = 6, Rank = Rank.Six, IsActive = true },
+				new Card { Name = "Countess", ID = 7, Rank = Rank.Seven, IsActive = true },
+				new Card { Name = "Princess", ID = 8, Rank = Rank.Eight, IsActive = true }
+			);
 
 			#endregion Cards
 

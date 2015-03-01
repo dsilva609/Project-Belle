@@ -76,6 +76,10 @@ namespace BusinessLogic.Services
 					card.RankString = null;
 					break;
 
+				case Rank.One:
+					card.RankString = "One";
+					break;
+
 				case Rank.Two:
 					card.RankString = "Two";
 					break;
