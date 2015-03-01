@@ -64,14 +64,12 @@ namespace UI.Controllers
 			var card = new Card();
 			var cardViewModel = new CardViewModel();
 			cardViewModel.ViewTitle = "Create New Card";
-			//ViewBag.Title = "Create New Card";
 
 			if (ID > 0)
 			{
 				card = this._Service.GetByID(ID);
 				Mapper.Map<Card, CardViewModel>(card, cardViewModel);
 				cardViewModel.ViewTitle = "Edit Card: " + card.Name;
-				//ViewBag.Title = "Edit Card: " + card.Name;
 			}
 
 			if (card == null)

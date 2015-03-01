@@ -19,9 +19,7 @@ namespace UnitTests.BusinessLogic.Components.CrudComponents
 					Name = "Bang!",
 					ID = 1,
 					Description = "Kill 'Em All",
-					Suit = Suit.Spade,
-					Rank = Rank.Ace,
-					Cardtype = CardType.Basic,
+					Rank = Rank.Eight,
 					IsActive = true
 				},
 
@@ -30,9 +28,7 @@ namespace UnitTests.BusinessLogic.Components.CrudComponents
 					Name = "Missed!",
 					ID = 2,
 					Description = "Missed me Fool",
-					Suit = Suit.Spade,
-					Rank = Rank.Ace,
-					Cardtype = CardType.Basic,
+					Rank = Rank.Eight,
 					IsActive = true
 				},
 
@@ -41,9 +37,7 @@ namespace UnitTests.BusinessLogic.Components.CrudComponents
 					Name = "Beer!",
 					ID = 3,
 					Description = "Drink up",
-					Suit = Suit.Spade,
-					Rank = Rank.Ace,
-					Cardtype = CardType.Basic,
+					Rank = Rank.Eight,
 					IsActive = true
 				}
 			});

@@ -371,7 +371,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Common\ElmahResult.cs" />
-    <Compile Include="Common\ProjectArielContextWrapper.cs" />
+    <Compile Include="Common\ProjectBelleContextWrapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\ElmahController.cs" />

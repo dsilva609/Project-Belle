@@ -42,19 +42,12 @@ namespace BusinessLogic.Services
 				else
 					cardList = cardList.OrderByDescending(x => x.Name).ToList();
 			}
-			else if (sortPreference == "CardType")
+			else if (sortPreference == "Rank")
 			{
 				if (sortAscending)
-					cardList = cardList.OrderBy(x => x.CardTypeString).ToList();
+					cardList = cardList.OrderBy(x => x.Rank).ToList();
 				else
-					cardList = cardList.OrderByDescending(x => x.CardTypeString).ToList();
-			}
-			else if (sortPreference == "Expansion")
-			{
-				if (sortAscending)
-					cardList = cardList.OrderBy(x => x.ExpansionString).ToList();
-				else
-					cardList.OrderByDescending(x => x.ExpansionString).ToList();
+					cardList = cardList.OrderByDescending(x => x.Rank).ToList();
 			}
 
 			return cardList;
@@ -77,82 +70,6 @@ namespace BusinessLogic.Services
 
 		public void ConvertEnums(Card card)
 		{
-			switch (card.Cardtype)
-			{
-				case CardType.Default:
-					card.CardTypeString = string.Empty;
-					break;
-
-				case CardType.Basic:
-					card.CardTypeString = "Basic";
-					break;
-
-				case CardType.Alcohol:
-					card.CardTypeString = "Alcohol";
-					break;
-
-				case CardType.Draw:
-					card.CardTypeString = "Draw";
-					break;
-
-				case CardType.TimeDelay:
-					card.CardTypeString = "Time Delay";
-					break;
-
-				case CardType.Weapon:
-					card.CardTypeString = "Weapon";
-					break;
-
-				case CardType.Equipment:
-					card.CardTypeString = "Equipment";
-					break;
-
-				case CardType.TargetAll:
-					card.CardTypeString = "Target All";
-					break;
-
-				case CardType.Role:
-					card.CardTypeString = "Role";
-					break;
-
-				case CardType.Event:
-					card.CardTypeString = "Event";
-					break;
-
-				case CardType.Character:
-					card.CardTypeString = "Character";
-					break;
-
-				default:
-					break;
-			}
-
-			switch (card.Suit)
-			{
-				case Suit.Default:
-					card.SuitString = null;
-					break;
-
-				case Suit.Heart:
-					card.SuitString = "Heart";
-					break;
-
-				case Suit.Diamond:
-					card.SuitString = "Diamond";
-					break;
-
-				case Suit.Club:
-					card.SuitString = "Club";
-					break;
-
-				case Suit.Spade:
-					card.SuitString = "Spade";
-					break;
-
-				default:
-					break;
-			}
-
 			switch (card.Rank)
 			{
 				case Rank.Default:
@@ -185,87 +102,6 @@ namespace BusinessLogic.Services
 
 				case Rank.Eight:
 					card.RankString = "Eight";
-					break;
-
-				case Rank.Nine:
-					card.RankString = "Nine";
-					break;
-
-				case Rank.Ten:
-					card.RankString = "Ten";
-					break;
-
-				case Rank.Jack:
-					card.RankString = "Jack";
-					break;
-
-				case Rank.Queen:
-					card.RankString = "Queen";
-					break;
-
-				case Rank.King:
-					card.RankString = "King";
-					break;
-
-				case Rank.Ace:
-					card.RankString = "Ace";
-					break;
-
-				default:
-					break;
-			}
-			switch (card.Expansion)
-			{
-				case Expansion.Default:
-					card.ExpansionString = string.Empty;
-					break;
-
-				case Expansion.Standard:
-					card.ExpansionString = "Standard";
-					break;
-
-				case Expansion.HighNoon:
-					card.ExpansionString = "High Noon";
-					break;
-
-				case Expansion.DodgeCity:
-					card.ExpansionString = "Dodge City";
-					break;
-
-				case Expansion.AFistfulOfCards:
-					card.ExpansionString = "A Fistful Of Cards";
-					break;
-
-				case Expansion.WildWestShow:
-					card.ExpansionString = "Wild West Show";
-					break;
-
-				case Expansion.GoldRush:
-					card.ExpansionString = "Gold Rush";
-					break;
-
-				case Expansion.ValleyOfShadows:
-					card.ExpansionString = "Valley Of Shadows";
-					break;
-
-				case Expansion.ElDorado:
-					card.ExpansionString = "El Dorado";
-					break;
-
-				case Expansion.DeathMesa:
-					card.ExpansionString = "Death Mesa";
-					break;
-
-				case Expansion.RobbersRoost:
-					card.ExpansionString = "Robber's Roost";
-					break;
-
-				case Expansion.BangTheBullet:
-					card.ExpansionString = "Bang! The Bullet";
-					break;
-
-				case Expansion.Anniversary:
-					card.ExpansionString = "Anniversary";
 					break;
 
 				default:

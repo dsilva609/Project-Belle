@@ -21,9 +21,7 @@ namespace UnitTests.BusinessLogic.Components.CrudComponents
 				Name = "Bang!",
 				ID = 1,
 				Description = "Kill 'Em All",
-				Suit = Suit.Spade,
-				Rank = Rank.Ace,
-				Cardtype = CardType.Basic,
+				Rank = Rank.Eight,
 				IsActive = true
 			};
 

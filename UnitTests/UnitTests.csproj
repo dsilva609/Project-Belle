@@ -105,10 +105,7 @@
     <Compile Include="BusinessLogic\Components\CrudComponents\GetEntityByIDComponentTests.cs" />
     <Compile Include="BusinessLogic\Components\CrudComponents\GetEntityListComponentTestBase.cs" />
     <Compile Include="BusinessLogic\Components\CrudComponents\GetEntityListComponentTests.cs" />
-    <Compile Include="BusinessLogic\Enums\CardTypeEnumTests.cs" />
-    <Compile Include="BusinessLogic\Enums\ExpansionEnumTests.cs" />
     <Compile Include="BusinessLogic\Enums\RankEnumTests.cs" />
-    <Compile Include="BusinessLogic\Enums\SuitEnumTests.cs" />
     <Compile Include="BusinessLogic\Services\CardServiceTestBase.cs" />
     <Compile Include="BusinessLogic\Services\PlayerServiceTestBase.cs" />
     <Compile Include="BusinessLogic\Services\PlayerServiceTests.cs" />
