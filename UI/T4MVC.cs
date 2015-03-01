@@ -4,7 +4,8 @@
 // to the .tt file (i.e. the T4 template) and save it to regenerate this file.
 
 // Make sure the compiler doesn't complain about missing Xml comments and CLS compliance
-#pragma warning disable 1591, 3008, 3009
+// 0108: suppress "Foo hides inherited member Foo. Use the new keyword if hiding was intended." when a controller and its abstract parent are both processed
+#pragma warning disable 1591, 3008, 3009, 0108
 #region T4MVC
 
 using System;
@@ -92,6 +93,8 @@ namespace Links
         public static readonly string jquery_ui_1_11_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-ui-1.11.2.min.js") ? Url("jquery-ui-1.11.2.min.js") : Url("jquery-ui-1.11.2.js");
         public static readonly string jquery_ui_1_11_2_min_js = Url("jquery-ui-1.11.2.min.js");
         public static readonly string jquery_ui_1_11_2_min_js_map = Url("jquery-ui-1.11.2.min.js.map");
+        public static readonly string jquery_ui_1_11_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-ui-1.11.3.min.js") ? Url("jquery-ui-1.11.3.min.js") : Url("jquery-ui-1.11.3.js");
+        public static readonly string jquery_ui_1_11_3_min_js = Url("jquery-ui-1.11.3.min.js");
         public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
         public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
         public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
@@ -271,13 +274,134 @@ namespace Links
     
     }
 
+    
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public static partial class Bundles
     {
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static partial class Scripts {}
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static partial class Styles {}
+        public static partial class Scripts 
+        {
+            public static partial class PageSpecific 
+            {
+                public static partial class Card 
+                {
+                    public static class Assets
+                    {
+                        public const string CardIndex_min_js = "~/Scripts/PageSpecific/Card/CardIndex.min.js"; 
+                        public const string EditCard_min_js = "~/Scripts/PageSpecific/Card/EditCard.min.js"; 
+                    }
+                }
+                public static partial class Game 
+                {
+                    public static class Assets
+                    {
+                        public const string GameIndex_min_js = "~/Scripts/PageSpecific/Game/GameIndex.min.js"; 
+                    }
+                }
+                public static partial class Player 
+                {
+                    public static class Assets
+                    {
+                        public const string PlayerIndex_min_js = "~/Scripts/PageSpecific/Player/PlayerIndex.min.js"; 
+                    }
+                }
+                public static class Assets
+                {
+                }
+            }
+            public static partial class Shared 
+            {
+                public static class Assets
+                {
+                    public const string Logout_min_js = "~/Scripts/Shared/Logout.min.js"; 
+                }
+            }
+            public static class Assets
+            {
+                public const string _references_js = "~/Scripts/_references.js"; 
+                public const string bootbox_js = "~/Scripts/bootbox.js"; 
+                public const string bootbox_min_js = "~/Scripts/bootbox.min.js"; 
+                public const string bootstrap_3_0_1_js = "~/Scripts/bootstrap-3.0.1.js"; 
+                public const string bootstrap_3_0_1_min_js = "~/Scripts/bootstrap-3.0.1.min.js"; 
+                public const string bootstrap_js = "~/Scripts/bootstrap.js"; 
+                public const string bootstrap_min_js = "~/Scripts/bootstrap.min.js"; 
+                public const string jquery_2_1_3_intellisense_js = "~/Scripts/jquery-2.1.3.intellisense.js"; 
+                public const string jquery_2_1_3_js = "~/Scripts/jquery-2.1.3.js"; 
+                public const string jquery_2_1_3_min_js = "~/Scripts/jquery-2.1.3.min.js"; 
+                public const string jquery_ui_1_11_2_js = "~/Scripts/jquery-ui-1.11.2.js"; 
+                public const string jquery_ui_1_11_2_min_js = "~/Scripts/jquery-ui-1.11.2.min.js"; 
+                public const string jquery_ui_1_11_3_js = "~/Scripts/jquery-ui-1.11.3.js"; 
+                public const string jquery_ui_1_11_3_min_js = "~/Scripts/jquery-ui-1.11.3.min.js"; 
+                public const string jquery_validate_js = "~/Scripts/jquery.validate.js"; 
+                public const string jquery_validate_min_js = "~/Scripts/jquery.validate.min.js"; 
+                public const string jquery_validate_unobtrusive_js = "~/Scripts/jquery.validate.unobtrusive.js"; 
+                public const string jquery_validate_unobtrusive_min_js = "~/Scripts/jquery.validate.unobtrusive.min.js"; 
+                public const string modernizr_2_6_2_js = "~/Scripts/modernizr-2.6.2.js"; 
+                public const string modernizr_2_7_2_js = "~/Scripts/modernizr-2.7.2.js"; 
+                public const string modernizr_2_8_3_js = "~/Scripts/modernizr-2.8.3.js"; 
+                public const string Namespace_js = "~/Scripts/Namespace.js"; 
+                public const string npm_js = "~/Scripts/npm.js"; 
+                public const string respond_js = "~/Scripts/respond.js"; 
+                public const string respond_matchmedia_addListener_js = "~/Scripts/respond.matchmedia.addListener.js"; 
+                public const string respond_matchmedia_addListener_min_js = "~/Scripts/respond.matchmedia.addListener.min.js"; 
+                public const string respond_min_js = "~/Scripts/respond.min.js"; 
+            }
+        }
+        public static partial class Content 
+        {
+            public static partial class Images 
+            {
+                public static class Assets
+                {
+                }
+            }
+            public static partial class themes 
+            {
+                public static partial class @base 
+                {
+                    public static partial class images 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static class Assets
+                    {
+                        public const string accordion_css = "~/Content/themes/base/accordion.css";
+                        public const string all_css = "~/Content/themes/base/all.css";
+                        public const string autocomplete_css = "~/Content/themes/base/autocomplete.css";
+                        public const string base_css = "~/Content/themes/base/base.css";
+                        public const string button_css = "~/Content/themes/base/button.css";
+                        public const string core_css = "~/Content/themes/base/core.css";
+                        public const string datepicker_css = "~/Content/themes/base/datepicker.css";
+                        public const string dialog_css = "~/Content/themes/base/dialog.css";
+                        public const string draggable_css = "~/Content/themes/base/draggable.css";
+                        public const string menu_css = "~/Content/themes/base/menu.css";
+                        public const string progressbar_css = "~/Content/themes/base/progressbar.css";
+                        public const string resizable_css = "~/Content/themes/base/resizable.css";
+                        public const string selectable_css = "~/Content/themes/base/selectable.css";
+                        public const string selectmenu_css = "~/Content/themes/base/selectmenu.css";
+                        public const string slider_css = "~/Content/themes/base/slider.css";
+                        public const string sortable_css = "~/Content/themes/base/sortable.css";
+                        public const string spinner_css = "~/Content/themes/base/spinner.css";
+                        public const string tabs_css = "~/Content/themes/base/tabs.css";
+                        public const string theme_css = "~/Content/themes/base/theme.css";
+                        public const string tooltip_css = "~/Content/themes/base/tooltip.css";
+                    }
+                }
+                public static class Assets
+                {
+                }
+            }
+            public static class Assets
+            {
+                public const string bootstrap_theme_css = "~/Content/bootstrap-theme.css";
+                public const string bootstrap_theme_min_css = "~/Content/bootstrap-theme.min.css";
+                public const string bootstrap_css = "~/Content/bootstrap.css";
+                public const string bootstrap_min_css = "~/Content/bootstrap.min.css";
+                public const string Responsive_css = "~/Content/Responsive.css";
+                public const string Site_css = "~/Content/Site.css";
+            }
+        }
     }
 }
 
@@ -311,6 +435,6 @@ internal static class T4MVCHelpers {
 
 
 #endregion T4MVC
-#pragma warning restore 1591, 3008, 3009
+#pragma warning restore 1591, 3008, 3009, 0108
 
 
