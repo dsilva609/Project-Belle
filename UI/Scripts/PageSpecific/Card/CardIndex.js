@@ -14,16 +14,9 @@
           return location.reload();
         });
       });
-      $('#cardTypeHeader').on("click", function() {
+      $('#rankHeader').on("click", function() {
         return $.get("/Card/SortPlayers", {
-          sortPreference: "CardType"
-        }, function() {
-          return location.reload();
-        });
-      });
-      $('#cardExpansionHeader').on("click", function() {
-        return $.get("/Card/SortPlayers", {
-          sortPreference: "Expansion"
+          sortPreference: "Rank"
         }, function() {
           return location.reload();
         });
@@ -54,6 +47,7 @@
     };
 
     return Index;
+
   })();
 
   $(function() {
@@ -61,6 +55,7 @@
     index = new Views.Card.Index;
     return index.init();
   });
+
 }).call(this);
 
 //# sourceMappingURL=CardIndex.js.map

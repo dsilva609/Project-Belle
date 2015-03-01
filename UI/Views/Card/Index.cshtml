@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BusinessLogic.Models.Card>
+﻿@model IEnumerable<UI.Models.CardViewModel>
 
 @{
 	ViewBag.Title = "Cards";
@@ -23,11 +23,8 @@
 		<div class="col-lg-3 removePaddingLeftRight">
 			@Html.DisplayNameFor(model => model.Description)
 		</div>
-		<div id="cardExpansionHeader" class="col-lg-2 removePaddingLeftRight">
-			@Html.DisplayNameFor(model => model.Expansion)
-		</div>
-		<div id="cardTypeHeader" class="col-lg-1 removePaddingLeftRight">
-			@Html.DisplayNameFor(model => model.Cardtype)
+		<div id="rankHeader" class="col-lg-3 removePaddingLeftRight" >
+			@Html.DisplayNameFor(model => model.RankString)
 		</div>
 		<div class="col-lg-3 removePaddingLeftRight">
 			@Html.DisplayNameFor(model => model.IsActive)
@@ -42,11 +39,8 @@
 			<div class="col-lg-3 removePaddingLeftRight">
 				@Html.DisplayFor(modelItem => item.Description)
 			</div>
-			<div class="col-lg-2 removePaddingLeftRight">
-				@Html.DisplayFor(modelItem => item.ExpansionString)
-			</div>
-			<div class="col-lg-1 removePaddingLeftRight">
-				@Html.DisplayFor(modelItem => item.CardTypeString)
+			<div class="col-lg-3">
+				@Html.DisplayFor(modelItem => item.RankString)
 			</div>
 			<div class="col-lg-1 removePaddingLeftRight">
 				@Html.DisplayFor(modelItem => item.IsActive)

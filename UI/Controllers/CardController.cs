@@ -3,6 +3,7 @@ using BusinessLogic.DAL;
 using BusinessLogic.Models;
 using BusinessLogic.Repositories;
 using BusinessLogic.Services;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using UI.Models;
 
@@ -26,7 +27,10 @@ namespace UI.Controllers
 		[HttpGet]
 		public virtual ActionResult Index()
 		{
-			return View(this._Service.GetAll((bool)Session[this.CARD_SORT_ASCENDING_STRING], Session[this.CARD_SORT_PREFERENCE_STRING].ToString()));
+			var viewModel = new List<CardViewModel>();
+			var cardList = this._Service.GetAll((bool)Session[this.CARD_SORT_ASCENDING_STRING], Session[this.CARD_SORT_PREFERENCE_STRING].ToString());
+			Mapper.Map<List<Card>, List<CardViewModel>>(cardList, viewModel);
+			return View(viewModel);
 		}
 
 		[HttpGet]

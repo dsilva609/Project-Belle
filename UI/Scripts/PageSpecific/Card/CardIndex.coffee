@@ -10,11 +10,8 @@ class Views.Card.Index
 		$('#cardNameHeader').on "click", ->
 			$.get "/Card/SortPlayers", sortPreference: "Name", -> location.reload()	
 			
-		$('#cardTypeHeader').on "click", ->
-			$.get "/Card/SortPlayers", sortPreference: "CardType", -> location.reload()	
-	
-		$('#cardExpansionHeader').on "click", ->
-			$.get "/Card/SortPlayers", sortPreference: "Expansion", -> location.reload()	
+		$('#rankHeader').on "click", ->
+			$.get "/Card/SortPlayers", sortPreference: "Rank", -> location.reload()	
 	
 		$('[id=card]').on "click", ->
 			window.location.href = redirectURL + "/" + $(this).data "id"

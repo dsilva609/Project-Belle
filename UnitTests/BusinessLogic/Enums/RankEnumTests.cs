@@ -20,6 +20,16 @@ namespace UnitTests.BusinessLogic.Enums
 		}
 
 		[TestMethod]
+		public void ThatOneValueHasCorrectValue()
+		{
+			//--Act
+			var result = Convert.ToInt32(Rank.One);
+
+			//--Assert
+			Assert.AreEqual(1, result, ENUM_FAILURE_MESSAGE);
+		}
+
+		[TestMethod]
 		public void ThatTwoValueHasCorrectValue()
 		{
 			//--Act

@@ -28,22 +28,6 @@
 		</div>
 
 		<div class="form-group">
-			@Html.LabelFor(model => model.ExpansionString, htmlAttributes: new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.EnumDropDownListFor(model => model.Expansion, new { @id = "expansionDropDown", @class = "form-control" })
-				@Html.ValidationMessageFor(model => model.Expansion, "", new { @class = "text-danger" })
-			</div>
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(model => model.CardTypeString, htmlAttributes: new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.EnumDropDownListFor(model => model.CardType, new { @id = "cardTypeDropDown", @class = "form-control" })
-				@Html.ValidationMessageFor(model => model.CardType, "", new { @class = "text-danger" })
-			</div>
-		</div>
-
-		<div class="form-group">
 			@Html.LabelFor(model => model.Action, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				@Html.EditorFor(model => model.Action, new { htmlAttributes = new { @id = "actionField", @class = "form-control" } })
@@ -52,24 +36,9 @@
 		</div>
 
 		<div class="form-group">
-			@Html.LabelFor(model => model.Range, htmlAttributes: new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.EditorFor(model => model.Range, new { htmlAttributes = new { @id = "rangeField", @class = "form-control" } })
-				@Html.ValidationMessageFor(model => model.Range, "", new { @class = "text-danger" })
-			</div>
-		</div>
-
-		<div class="form-group">
 			@Html.LabelFor(model => model.RankString, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				@Html.EnumDropDownListFor(model => model.Rank, new { @id = "rankDropDown", @class = "form-control" })
-			</div>
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(model => model.SuitString, htmlAttributes: new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.EnumDropDownListFor(model => model.Suit, new { @id = "suitDropDown", @class = "form-control" })
 			</div>
 		</div>
 
