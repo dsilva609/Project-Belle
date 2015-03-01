@@ -72,8 +72,8 @@
     <Compile Include="Components\CrudComponents\EditEntityComponent.cs" />
     <Compile Include="Components\CrudComponents\GetEntityByIDComponent.cs" />
     <Compile Include="Components\CrudComponents\GetEntityListComponent.cs" />
-    <Compile Include="DAL\ProjectArielContext.cs" />
-    <Compile Include="DAL\ProjectArielInitializer.cs" />
+    <Compile Include="DAL\ProjectBelleContext.cs" />
+    <Compile Include="DAL\ProjectBelleInitializer.cs" />
     <Compile Include="Enums\CardType.cs" />
     <Compile Include="Enums\Expansion.cs" />
     <Compile Include="Enums\Rank.cs" />
