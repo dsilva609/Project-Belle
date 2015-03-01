@@ -1,4 +1,13 @@
-﻿body {
+﻿/* latin */
+@font-face {
+  font-family: 'Arizonia';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arizonia'), local('Arizonia-Regular'), url(http://fonts.gstatic.com/s/arizonia/v6/PwrsyFTYH2Wmsvpn0dx4s_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body {
 	padding-top: 50px;
 	padding-bottom: 20px;
 }
@@ -36,12 +45,14 @@ textarea {
 	background-color: ButtonShadow;
 	cursor: pointer;
 }
+
 .btn-link {
 	height: 20px;
 	vertical-align: top;
 	padding: 0;
 	margin-top: -1px;
 }
+
 .card {
 	background-color: saddlebrown;
 	float: left;
@@ -88,4 +99,18 @@ textarea {
 	width: 600px;
 	height: 200px;
 	margin: 20%;
+}
+
+.redText {
+	color: red !important;
+	font-family: "Arizonia";
+	font-size: large !important;
+}
+.title {
+	font-size: 75px !important;
+}
+
+.titleDescription {
+	font-size: 30px !important;
+	margin-left: 200px !important;
 }
