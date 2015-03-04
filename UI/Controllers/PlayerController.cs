@@ -30,7 +30,7 @@ namespace UI.Controllers
 		}
 
 		[HttpGet]
-		public virtual ActionResult RedirectUser(int? ID)
+		public virtual ActionResult RedirectUser(int ID)
 		{
 			if (User.IsInRole("Admin"))
 				return RedirectToAction(MVC.Player.Edit(ID));
@@ -53,26 +53,23 @@ namespace UI.Controllers
 		[HttpGet]
 		public virtual ActionResult Create()
 		{
-			return RedirectToAction(MVC.Player.Edit());
+			var playerViewModel = new PlayerViewModel();
+			playerViewModel.ViewTitle = "Create Player";
+
+			return View(playerViewModel);
 		}
 
 		[Authorize(Roles = "Admin")]
 		[HttpGet]
-		public virtual ActionResult Edit(int? ID)
+		public virtual ActionResult Edit(int ID)
 		{
-			var player = new Player();
+			//var player = new Player();
 			var playerViewModel = new PlayerViewModel();
-			playerViewModel.ViewTitle = "Create Player";
+			//playerViewModel.ViewTitle = "Create Player";
 
-			if (ID > 0)
-			{
-				player = this._Service.GetByID(ID);
-				Mapper.Map<Player, PlayerViewModel>(player, playerViewModel);
-				playerViewModel.ViewTitle = "Edit Player: " + player.Name;
-			}
-
-			if (player == null)
-				return HttpNotFound();
+			var player = this._Service.GetByID(ID);
+			Mapper.Map<Player, PlayerViewModel>(player, playerViewModel);
+			playerViewModel.ViewTitle = "Edit Player: " + player.Name;
 
 			return View(playerViewModel);
 		}
@@ -106,21 +103,35 @@ namespace UI.Controllers
 		[Authorize(Roles = "Admin")]
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public virtual ActionResult Edit([Bind(Include = "ID,Name,IsActive")] PlayerViewModel playerViewModel, int ID)
+		public virtual ActionResult Create(PlayerViewModel playerModel)
+		{
+			if (ModelState.IsValid)
+			{
+				var player = new Player();
+
+				Mapper.Map<PlayerViewModel, Player>(playerModel, player);
+
+				player.IsActive = true;
+
+				this._Service.Add(player);
+
+				return RedirectToAction(MVC.Player.Index());
+			}
+			return View(playerModel);
+		}
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public virtual ActionResult Edit(PlayerViewModel playerViewModel, int ID)
 		{
 			if (ModelState.IsValid)
 			{
 				var player = new Player();
 
 				Mapper.Map<PlayerViewModel, Player>(playerViewModel, player);
-
-				if (ID == 0)
-				{
-					player.IsActive = true;
-					this._Service.Add(player);
-				}
 
 				this._Service.Edit(ID, player);
 

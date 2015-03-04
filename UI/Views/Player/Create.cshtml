@@ -1,7 +1,7 @@
 ﻿@model UI.Models.PlayerViewModel
 
 <h2>@Model.ViewTitle</h2>
-@using (Html.BeginForm(MVC.Player.Edit(), FormMethod.Post)) 
-{ 	
+@using (Html.BeginForm(MVC.Player.Create(), FormMethod.Post))
+{
 	Html.RenderPartial(MVC.Player.Views._PlayerFormPartial, Model);
 }
