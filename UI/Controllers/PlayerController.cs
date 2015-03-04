@@ -29,14 +29,14 @@ namespace UI.Controllers
 			return View(this._Service.GetAll((bool)Session[this.PLAYER_SORT_ASCENDING_STRING], Session[this.PLAYER_SORT_PREFERENCE_STRING].ToString()));
 		}
 
-		[HttpGet]
-		public virtual ActionResult RedirectUser(int ID)
-		{
-			if (User.IsInRole("Admin"))
-				return RedirectToAction(MVC.Player.Edit(ID));
+		//[HttpGet]
+		//public virtual ActionResult RedirectUser(int ID)
+		//{
+		//	if (User.IsInRole("Admin"))
+		//		return RedirectToAction(MVC.Player.Edit(ID));
 
-			return RedirectToAction(MVC.Player.Details(ID));
-		}
+		//	return RedirectToAction(MVC.Player.Details(ID));
+		//}
 
 		[HttpGet]
 		public virtual ActionResult Details(int ID)

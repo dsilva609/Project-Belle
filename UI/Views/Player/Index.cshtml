@@ -4,7 +4,7 @@
 	ViewBag.Title = "Players";
 }
 <script>
-	var redirectURL = '@Url.Action(MVC.Player.RedirectUser())';
+	var editUrl = '@Url.Action(MVC.Player.Edit())';
 	var deleteURL = '@Url.Action(MVC.Player.Delete())';
 </script>
 
@@ -37,7 +37,7 @@
 			@if (User.IsInRole("Admin"))
 			{
 				<div class="col-lg-3">
-					<input id="deletePlayer" class="btn btn-link btn-link-height" type="button" data-id="@item.ID" value="Delete" />
+					<input id="deletePlayerBtn" class="btn btn-link btn-link-height" type="button" data-id="@item.ID" value="Delete" />
 				</div>
 			}
 		</div>
