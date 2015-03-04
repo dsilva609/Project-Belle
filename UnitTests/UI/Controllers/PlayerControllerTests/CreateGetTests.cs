@@ -19,7 +19,7 @@ namespace UnitTests.UI.Controllers.PlayerControllerTests
 		}
 
 		[TestMethod]
-		public void ThatCreateActionReturnsEditView()
+		public void ThatCreateActionReturnsCreateView()
 		{
 			//--Arrange
 			base._playerController.Setup(mock => mock.Create()).Returns(new ViewResult { ViewName = MVC.Player.Views.Create });

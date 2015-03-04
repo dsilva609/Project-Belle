@@ -63,9 +63,7 @@ namespace UI.Controllers
 		[HttpGet]
 		public virtual ActionResult Edit(int ID)
 		{
-			//var player = new Player();
 			var playerViewModel = new PlayerViewModel();
-			//playerViewModel.ViewTitle = "Create Player";
 
 			var player = this._Service.GetByID(ID);
 			Mapper.Map<Player, PlayerViewModel>(player, playerViewModel);
@@ -148,9 +146,8 @@ namespace UI.Controllers
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing)
-			{
 				this._Uow.Dispose();
-			}
+
 			base.Dispose(disposing);
 		}
 	}

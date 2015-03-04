@@ -2,7 +2,7 @@
 
 <h2>@Model.ViewTitle</h2>
 
-@using (Html.BeginForm(MVC.Card.Edit(), FormMethod.Post))
+@using (Html.BeginForm(MVC.Card.Create(), FormMethod.Post))
 {
 	Html.RenderPartial(MVC.Card.Views._CardFormPartial, Model);
 }

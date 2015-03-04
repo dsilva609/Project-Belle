@@ -111,7 +111,8 @@
     <Compile Include="BusinessLogic\Services\PlayerServiceTests.cs" />
     <Compile Include="BusinessLogic\Services\CardServiceTests.cs" />
     <Compile Include="UI\Controllers\CardControllerTests\CardControllerTestBase.cs" />
-    <Compile Include="UI\Controllers\CardControllerTests\CreateTests.cs" />
+    <Compile Include="UI\Controllers\CardControllerTests\CreateGetTests.cs" />
+    <Compile Include="UI\Controllers\CardControllerTests\CreatePostTests.cs" />
     <Compile Include="UI\Controllers\CardControllerTests\DeleteTests.cs" />
     <Compile Include="UI\Controllers\CardControllerTests\DetailsTests.cs" />
     <Compile Include="UI\Controllers\CardControllerTests\EditGetTests.cs" />
