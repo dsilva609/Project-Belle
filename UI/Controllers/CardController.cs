@@ -43,13 +43,9 @@ namespace UI.Controllers
 		}
 
 		[HttpGet]
-		public virtual ActionResult Details(int? ID)
+		public virtual ActionResult Details(int ID)
 		{
 			var card = this._Service.GetByID(ID);
-			if (card == null)
-			{
-				return HttpNotFound();
-			}
 
 			return View(card);
 		}

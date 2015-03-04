@@ -225,10 +225,10 @@ namespace UI.Controllers
         }
 
         [NonAction]
-        partial void DetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? ID);
+        partial void DetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int ID);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Details(int? ID)
+        public override System.Web.Mvc.ActionResult Details(int ID)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ID", ID);

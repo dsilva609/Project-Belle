@@ -39,12 +39,9 @@ namespace UI.Controllers
 		}
 
 		[HttpGet]
-		public virtual ActionResult Details(int? ID)
+		public virtual ActionResult Details(int ID)
 		{
 			var player = this._Service.GetByID(ID);
-
-			if (player == null)
-				return HttpNotFound();
 
 			return View(player);
 		}

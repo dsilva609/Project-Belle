@@ -53,8 +53,8 @@ namespace BusinessLogic.Services
 			return cardList;
 		}
 
-		public Card GetByID(int? ID)
-		{//TODO needs null check
+		public Card GetByID(int ID)
+		{
 			return this._getEntityByIDComponent.Execute(this._Repository, ID);
 		}
 
