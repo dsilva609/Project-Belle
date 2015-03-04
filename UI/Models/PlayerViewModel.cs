@@ -1,17 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BusinessLogic.Models;
 
 namespace UI.Models
 {
-	public class PlayerViewModel
+	public class PlayerViewModel : Player
 	{
-		[Required]
-		public string Name { get; set; }
-
-		public int ID { get; set; }
-
 		public string ViewTitle { get; set; }
-
-		[Display(Name = "Active")]
-		public bool IsActive { get; set; }
 	}
 }
