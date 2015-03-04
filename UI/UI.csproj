@@ -315,6 +315,10 @@
       <DependentUpon>respond.matchmedia.addListener.min.js</DependentUpon>
     </Content>
     <None Include="T4MVC.tt.hooks.t4" />
+    <Content Include="Views\Player\_PlayerFormPartial.cshtml" />
+    <Content Include="Views\Player\Create.cshtml" />
+    <Content Include="Views\Card\Create.cshtml" />
+    <Content Include="Views\Card\_CardFormPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

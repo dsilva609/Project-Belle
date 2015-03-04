@@ -34,7 +34,7 @@ namespace UI.Controllers
 		}
 
 		[HttpGet]
-		public virtual ActionResult RedirectUser(int? ID)
+		public virtual ActionResult RedirectUser(int ID)
 		{
 			if (User.IsInRole("Admin"))
 				return RedirectToAction(MVC.Card.Edit(ID));
@@ -58,28 +58,21 @@ namespace UI.Controllers
 		[HttpGet]
 		public virtual ActionResult Create()
 		{
-			return RedirectToAction(MVC.Card.Edit());
+			var cardViewModel = new CardViewModel();
+			cardViewModel.ViewTitle = "Create New Card";
+
+			return View(cardViewModel);
 		}
 
 		[Authorize(Roles = "Admin")]
 		[HttpGet]
-		public virtual ActionResult Edit(int? ID)
+		public virtual ActionResult Edit(int ID)
 		{
-			var card = new Card();
 			var cardViewModel = new CardViewModel();
-			cardViewModel.ViewTitle = "Create New Card";
 
-			if (ID > 0)
-			{
-				card = this._Service.GetByID(ID);
-				Mapper.Map<Card, CardViewModel>(card, cardViewModel);
-				cardViewModel.ViewTitle = "Edit Card: " + card.Name;
-			}
-
-			if (card == null)
-			{
-				return HttpNotFound();
-			}
+			var card = this._Service.GetByID(ID);
+			Mapper.Map<Card, CardViewModel>(card, cardViewModel);
+			cardViewModel.ViewTitle = "Edit Card: " + card.Name;
 
 			return View(cardViewModel);
 		}
@@ -112,23 +105,38 @@ namespace UI.Controllers
 
 		#region HttpPost
 
-		// POST: Card/Edit/5
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public virtual ActionResult Edit([Bind(Include = "ID,Name,Description,Expansion,Action,Range,Cardtype,Suit,Rank,ImageLocation,IsActive")] CardViewModel cardViewModel, int ID)
+		public virtual ActionResult Create(CardViewModel cardViewModel)
 		{
 			if (ModelState.IsValid)
 			{
 				var card = new Card();
 
 				Mapper.Map<CardViewModel, Card>(cardViewModel, card);
-				if (ID == 0)
-				{
-					cardViewModel.IsActive = true;
-					this._Service.Add(card);
-				}
+
+				this._Service.ConvertEnums(card);
+				card.IsActive = true;
+				this._Service.Add(card);
+
+				return RedirectToAction(MVC.Card.Index());
+			}
+			return View(cardViewModel);
+		}
+
+		// POST: Card/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public virtual ActionResult Edit(CardViewModel cardViewModel, int ID)
+		{
+			if (ModelState.IsValid)
+			{
+				var card = new Card();
+
+				Mapper.Map<CardViewModel, Card>(cardViewModel, card);
+
 				this._Service.ConvertEnums(card);
 				this._Service.Edit(ID, card);
 
@@ -143,9 +151,8 @@ namespace UI.Controllers
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing)
-			{
 				this._Uow.Dispose();
-			}
+
 			base.Dispose(disposing);
 		}
 	}

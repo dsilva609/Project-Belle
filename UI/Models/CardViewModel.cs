@@ -5,6 +5,7 @@ namespace UI.Models
 {
 	public class CardViewModel
 	{
+		[Required]
 		public string Name { get; set; }
 
 		public int ID { get; set; }
@@ -13,6 +14,7 @@ namespace UI.Models
 
 		public string Action { get; set; }
 
+		[Required]
 		public Rank Rank { get; set; }
 
 		[Display(Name = "Rank")]

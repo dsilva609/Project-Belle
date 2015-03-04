@@ -164,6 +164,14 @@ namespace UI.Controllers
         {
             public readonly string sortPreference = "sortPreference";
         }
+        static readonly ActionParamsClass_Create s_params_Create = new ActionParamsClass_Create();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Create CreateParams { get { return s_params_Create; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Create
+        {
+            public readonly string playerModel = "playerModel";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -174,10 +182,14 @@ namespace UI.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _PlayerFormPartial = "_PlayerFormPartial";
+                public readonly string Create = "Create";
                 public readonly string Details = "Details";
                 public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
             }
+            public readonly string _PlayerFormPartial = "~/Views/Player/_PlayerFormPartial.cshtml";
+            public readonly string Create = "~/Views/Player/Create.cshtml";
             public readonly string Details = "~/Views/Player/Details.cshtml";
             public readonly string Edit = "~/Views/Player/Edit.cshtml";
             public readonly string Index = "~/Views/Player/Index.cshtml";
@@ -201,10 +213,10 @@ namespace UI.Controllers
         }
 
         [NonAction]
-        partial void RedirectUserOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? ID);
+        partial void RedirectUserOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int ID);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult RedirectUser(int? ID)
+        public override System.Web.Mvc.ActionResult RedirectUser(int ID)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RedirectUser);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ID", ID);
@@ -236,10 +248,10 @@ namespace UI.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? ID);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int ID);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Edit(int? ID)
+        public override System.Web.Mvc.ActionResult Edit(int ID)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "ID", ID);
@@ -268,6 +280,18 @@ namespace UI.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SortPlayers);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "sortPreference", sortPreference);
             SortPlayersOverride(callInfo, sortPreference);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, UI.Models.PlayerViewModel playerModel);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Create(UI.Models.PlayerViewModel playerModel)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "playerModel", playerModel);
+            CreateOverride(callInfo, playerModel);
             return callInfo;
         }
 
