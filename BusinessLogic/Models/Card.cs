@@ -17,6 +17,7 @@ namespace BusinessLogic.Models
 		[Required]
 		public Rank Rank { get; set; }
 
+		[Display(Name = "Rank")]
 		public string RankString { get; set; }
 
 		[Required]
