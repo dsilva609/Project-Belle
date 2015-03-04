@@ -20,6 +20,9 @@ namespace UI.Models
 		[Display(Name = "Rank")]
 		public string RankString { get; set; }
 
+		[Required]
+		public int Rarity { get; set; }
+
 		[Display(Name = "Image Location")]
 		public string ImageLocation { get; set; }
 

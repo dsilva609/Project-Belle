@@ -14,9 +14,13 @@ namespace BusinessLogic.Models
 
 		public string Action { get; set; }
 
+		[Required]
 		public Rank Rank { get; set; }
 
 		public string RankString { get; set; }
+
+		[Required]
+		public int Rarity { get; set; }
 
 		[Display(Name = "Image Location")]
 		public string ImageLocation { get; set; }

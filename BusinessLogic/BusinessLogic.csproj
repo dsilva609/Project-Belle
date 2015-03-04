@@ -83,6 +83,10 @@
     <Compile Include="Migrations\201503011915580_removedbangelements.Designer.cs">
       <DependentUpon>201503011915580_removedbangelements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503041804518_addedRarityToCards.cs" />
+    <Compile Include="Migrations\201503041804518_addedRarityToCards.Designer.cs">
+      <DependentUpon>201503041804518_addedRarityToCards.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\Player.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503011915580_removedbangelements.resx">
       <DependentUpon>201503011915580_removedbangelements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503041804518_addedRarityToCards.resx">
+      <DependentUpon>201503041804518_addedRarityToCards.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
