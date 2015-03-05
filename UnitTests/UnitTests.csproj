@@ -118,7 +118,6 @@
     <Compile Include="UI\Controllers\CardControllerTests\EditGetTests.cs" />
     <Compile Include="UI\Controllers\CardControllerTests\EditPostTests.cs" />
     <Compile Include="UI\Controllers\CardControllerTests\IndexTests.cs" />
-    <Compile Include="UI\Controllers\CardControllerTests\RedirectTests.cs" />
     <Compile Include="UI\Controllers\CardControllerTests\SortCardTests.cs" />
     <Compile Include="UI\Controllers\ControllerTestBase.cs" />
     <Compile Include="UI\Controllers\GameControllerTests\GameControllerTestBase.cs" />
@@ -133,7 +132,6 @@
     <Compile Include="UI\Controllers\PlayerControllerTests\DetailsTests.cs" />
     <Compile Include="UI\Controllers\PlayerControllerTests\EditGetTests.cs" />
     <Compile Include="UI\Controllers\PlayerControllerTests\EditPostTests.cs" />
-    <Compile Include="UI\Controllers\PlayerControllerTests\RedirectTests.cs" />
     <Compile Include="UI\Controllers\PlayerControllerTests\PlayerControllerTestBase.cs" />
     <Compile Include="UI\Controllers\PlayerControllerTests\IndexTests.cs" />
     <Compile Include="UI\Controllers\PlayerControllerTests\SortPlayerTests.cs" />
