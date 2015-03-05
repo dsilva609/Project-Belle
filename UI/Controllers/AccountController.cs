@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 using UI.Models;
 
 namespace UI.Controllers
@@ -384,8 +383,6 @@ namespace UI.Controllers
 		[ValidateAntiForgeryToken]
 		public virtual ActionResult LogOff()
 		{
-			FormsAuthentication.SignOut();
-			Session.Abandon();
 			AuthenticationManager.SignOut();
 			return RedirectToAction(MVC.Home.Index());
 		}
