@@ -22,7 +22,7 @@
         });
       });
       $('[id=card]').on("click", function() {
-        return window.location.href = redirectURL + "/" + $(this).data("id");
+        return window.location.href = detailsUrl + "/" + $(this).data("id");
       });
       return $('[id=deleteCard]').on("click", function() {
         var ID;
@@ -37,7 +37,7 @@
               label: "Yes",
               className: "btn-danger",
               callback: function() {
-                return window.location.href = deleteURL + "/" + ID;
+                return window.location.href = deleteUrl + "/" + ID;
               }
             }
           }

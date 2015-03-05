@@ -14,7 +14,7 @@ class Views.Card.Index
 			$.get "/Card/SortPlayers", sortPreference: "Rank", -> location.reload()	
 	
 		$('[id=card]').on "click", ->
-			window.location.href = redirectURL + "/" + $(this).data "id"
+			window.location.href = detailsUrl + "/" + $(this).data "id"
 
 		$('[id=deleteCard]').on "click", ->
 			ID = $(this).data "id"
@@ -28,7 +28,7 @@ class Views.Card.Index
 						label: "Yes"
 						className: "btn-danger"
 						callback: ->
-							window.location.href = deleteURL + "/" + ID
+							window.location.href = deleteUrl + "/" + ID
 			return false
 
 $ ->

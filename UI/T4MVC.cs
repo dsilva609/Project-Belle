@@ -145,6 +145,11 @@ namespace Links
                 private const string URLPATH = "~/Scripts/PageSpecific/Player";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string PlayerDetails_coffee = Url("PlayerDetails.coffee");
+                public static readonly string PlayerDetails_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PlayerDetails.min.js") ? Url("PlayerDetails.min.js") : Url("PlayerDetails.js");
+                public static readonly string PlayerDetails_js_map = Url("PlayerDetails.js.map");
+                public static readonly string PlayerDetails_min_js = Url("PlayerDetails.min.js");
+                public static readonly string PlayerDetails_min_js_map = Url("PlayerDetails.min.js.map");
                 public static readonly string PlayerIndex_coffee = Url("PlayerIndex.coffee");
                 public static readonly string PlayerIndex_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PlayerIndex.min.js") ? Url("PlayerIndex.min.js") : Url("PlayerIndex.js");
                 public static readonly string PlayerIndex_js_map = Url("PlayerIndex.js.map");

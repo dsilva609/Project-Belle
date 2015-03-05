@@ -20,8 +20,7 @@ class Views.Shared.Logout
 						callback: ->
 							event.preventDefault()
 					confirm: 
-						label: "Yes"
-						className: ""
+						label: "Yes"	
 						callback: ->
 							$("#logoutForm").submit()
 			event.preventDefault()					

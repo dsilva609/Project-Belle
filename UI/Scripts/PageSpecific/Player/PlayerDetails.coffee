@@ -2,19 +2,12 @@
 Namespace "Views.Player"
 
 #Initialization
-Views.Player.Index = ->
+Views.Player.Details = ->
 
 #Implementation
-class Views.Player.Index
+class Views.Player.Details
 	init: ->
-		$('#playerNameHeader').on "click", ->
-			$.get "/Player/SortPlayers", sortPreference: "Name", -> location.reload()			
-	
-		$('[id=player]').on "click", ->
-			window.location.href = detailsUrl + "/" + $(this).data "id"
-	
-
-		$('[id=deletePlayerBtn]').on "click", ->
+		$('[id=playerDeleteBtn]').on "click", ->
 			ID = $(this).data "id"
 	
 			bootbox.dialog 
@@ -28,8 +21,6 @@ class Views.Player.Index
 						callback: ->
 							window.location.href = deleteUrl + "/" + ID
 			return false
-			
 $ ->
-	index = new Views.Player.Index
-	
-	index.init()
+	details = new Views.Player.Details
+	details.init()
