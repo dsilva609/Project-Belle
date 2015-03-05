@@ -4,16 +4,16 @@
 	ViewBag.Title = "Cards";
 }
 <script>
-	var redirectURL = '@Url.Action(MVC.Card.RedirectUser())';
-	var deleteURL = '@Url.Action(MVC.Card.Delete())';
+	var detailsUrl = '@Url.Action(MVC.Card.Details())';
+	var deleteUrl = '@Url.Action(MVC.Card.Delete())';
 </script>
 
 <h2>Cards</h2>
 @if (User.IsInRole("Admin"))
 {
-<p>
-	@Html.ActionLink("Create New", MVC.Card.Create())
-</p>
+	<p>
+		@Html.ActionLink("Create New", MVC.Card.Create())
+	</p>
 }
 <div class="table">
 	<div class="bold row">
@@ -23,7 +23,7 @@
 		<div class="col-lg-3 removePaddingLeftRight">
 			@Html.DisplayNameFor(model => model.Description)
 		</div>
-		<div id="rankHeader" class="col-lg-3 removePaddingLeftRight" >
+		<div id="rankHeader" class="col-lg-3 removePaddingLeftRight">
 			@Html.DisplayNameFor(model => model.RankString)
 		</div>
 		<div class="col-lg-3 removePaddingLeftRight">
@@ -48,7 +48,9 @@
 			@if (User.IsInRole("Admin"))
 			{
 				<div class="col-lg-2 removePaddingLeftRight">
-					<input id="deleteCard" class="btn btn-link btn-link-height" type="button" data-id="@item.ID" value="Delete" />
+					@Html.ActionLink("Edit", MVC.Card.Edit(item.ID), new { @id = "editCardBtn", @class = "btn btn-link btn-link-height" })
+					<span> | </span>
+					@Html.ActionLink("Delete", MVC.Card.Delete(item.ID), new { @id = "deleteCard", @class = "btn btn-link btn-link-height", @data_id = item.ID })
 				</div>
 			}
 		</div>

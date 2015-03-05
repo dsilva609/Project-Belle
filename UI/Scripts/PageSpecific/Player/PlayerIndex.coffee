@@ -26,7 +26,7 @@ class Views.Player.Index
 						label: "Yes"
 						className: "btn-danger"
 						callback: ->
-							window.location.href = deleteURL + "/" + ID
+							window.location.href = deleteUrl + "/" + ID
 			return false
 			
 $ ->

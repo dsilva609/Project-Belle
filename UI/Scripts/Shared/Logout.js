@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
   Namespace("Views.Shared");
 
   Views.Shared.Logout = function() {
@@ -24,7 +24,6 @@
             },
             confirm: {
               label: "Yes",
-              className: "",
               callback: function() {
                 return $("#logoutForm").submit();
               }
@@ -36,6 +35,7 @@
     };
 
     return Logout;
+
   })();
 
   $(function() {
@@ -43,4 +43,7 @@
     logout = new Views.Shared.Logout;
     return logout.init();
   });
+
 }).call(this);
+
+//# sourceMappingURL=Logout.js.map

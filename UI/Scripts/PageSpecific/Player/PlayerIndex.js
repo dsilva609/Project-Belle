@@ -30,7 +30,7 @@
               label: "Yes",
               className: "btn-danger",
               callback: function() {
-                return window.location.href = deleteURL + "/" + ID;
+                return window.location.href = deleteUrl + "/" + ID;
               }
             }
           }

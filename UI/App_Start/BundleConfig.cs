@@ -29,6 +29,7 @@ namespace UI
 				.Include("~/Scripts/Namespace.js")
 				.Include("~/Scripts/Shared/Logout.js")
 				.Include("~/Scripts/PageSpecific/Card/CardIndex.js")
+				.Include("~/Scripts/PageSpecific/Card/CardDetails.js")
 				.Include("~/Scripts/PageSpecific/Card/EditCard.js")
 				.Include("~/Scripts/PageSpecific/Player/PlayerIndex.js")
 				.Include("~/Scripts/PageSpecific/Player/PlayerDetails.js")
