@@ -255,6 +255,12 @@
     <Content Include="Scripts\PageSpecific\Game\GameIndex.coffee" />
     <Content Include="Scripts\PageSpecific\Game\GameIndex.js.map" />
     <Content Include="Scripts\PageSpecific\Game\GameIndex.min.js.map" />
+    <Content Include="Scripts\PageSpecific\Player\PlayerDetails.js">
+      <DependentUpon>PlayerDetails.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\PageSpecific\Player\PlayerDetails.min.js">
+      <DependentUpon>PlayerDetails.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\PageSpecific\Player\PlayerIndex.coffee" />
     <Content Include="Scripts\PageSpecific\Player\PlayerIndex.js.map" />
     <Content Include="Scripts\PageSpecific\Player\PlayerIndex.min.js.map" />
@@ -265,6 +271,13 @@
     <Content Include="Scripts\Shared\Logout.coffee" />
     <Content Include="Scripts\Shared\Logout.js.map" />
     <Content Include="Scripts\Shared\Logout.min.js.map" />
+    <Content Include="Scripts\PageSpecific\Player\PlayerDetails.coffee" />
+    <Content Include="Scripts\PageSpecific\Player\PlayerDetails.js.map">
+      <DependentUpon>PlayerDetails.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\PageSpecific\Player\PlayerDetails.min.js.map">
+      <DependentUpon>PlayerDetails.min.js</DependentUpon>
+    </Content>
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>

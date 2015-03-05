@@ -1,7 +1,7 @@
 ﻿#Usings
 Namespace "Views.Player"
 
-#Implementation
+#Initialization
 Views.Player.Index = ->
 
 #Implementation
@@ -10,9 +10,9 @@ class Views.Player.Index
 		$('#playerNameHeader').on "click", ->
 			$.get "/Player/SortPlayers", sortPreference: "Name", -> location.reload()			
 	
-#		$('[id=player]').on "click", ->
-#			window.location.href = redirectURL + "/" + $(this).data "id"
-#	
+		$('[id=player]').on "click", ->
+			window.location.href = detailsUrl + "/" + $(this).data "id"
+	
 
 		$('[id=deletePlayerBtn]').on "click", ->
 			ID = $(this).data "id"

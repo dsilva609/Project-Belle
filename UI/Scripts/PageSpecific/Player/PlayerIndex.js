@@ -14,6 +14,9 @@
           return location.reload();
         });
       });
+      $('[id=player]').on("click", function() {
+        return window.location.href = detailsUrl + "/" + $(this).data("id");
+      });
       return $('[id=deletePlayerBtn]').on("click", function() {
         var ID;
         ID = $(this).data("id");
