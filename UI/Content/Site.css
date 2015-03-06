@@ -93,12 +93,20 @@ textarea {
 	margin: -155px 0 0 220px;
 }
 
+.turnOrder {
+	background-color: gold;
+	width: 150px;
+	height: 200px;
+	text-align: center;
+	float: left;
+}
+
 .mainPlayer {
 	background-color: violet;
 	text-align: center;
 	width: 600px;
 	height: 200px;
-	/*margin: 25%;*/
+	margin-left: 25%;
 }
 
 .redText {
