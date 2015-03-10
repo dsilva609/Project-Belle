@@ -93,12 +93,19 @@ textarea {
 	margin: -155px 0 0 220px;
 }
 
-.mainPlayer {
-	background-color: violet;
-	text-align: center;
-	width: 600px;
+.turnOrder {
+	background-color: gold;
+	width: 150px;
 	height: 200px;
-	margin: 20%;
+	text-align: center;
+	float: left;
+}
+
+.mainPlayer {
+	text-align: center;
+	width: 800px;
+	height: 200px;
+	margin-left: 30%;
 }
 
 .redText {
@@ -106,6 +113,7 @@ textarea {
 	font-family: "Arizonia";
 	font-size: large !important;
 }
+
 .title {
 	font-size: 75px !important;
 }
@@ -113,4 +121,66 @@ textarea {
 .titleDescription {
 	font-size: 30px !important;
 	margin-left: 200px !important;
+}
+
+.hand {
+	background-color: blue;
+	width: 600px;
+	height: 200px;
+	float: left;
+}
+
+.tokensOfAffection{
+	background-color: red;
+	margin-left: 80%;
+	width: 100px;
+	height: 200px;
+}
+
+.deckArea {
+	background-color: green;
+	text-align: center;
+	width: 400px;
+	height: 200px;
+	margin-left: 35%;
+	margin-bottom: 25px;
+}
+
+.playedCards {
+	background-color: violet;
+	text-align: center;
+	width: 600px;
+	height: 200px;
+	margin-left: 30%;
+	margin-bottom: 25px;
+}
+
+.otherPlayers {
+	background-color: coral;
+	text-align: center;
+	width: 1000px;
+	height: 250px;
+	margin-left: 20%;
+	float: left;
+}
+
+.burnedCards {
+	background-color: brown;
+	text-align: center;
+	width: 200px;
+	height: 200px;
+	margin-left: 80%;
+}
+
+.player {
+	background-color: lime;
+	width: 300px;
+	height: 200px;
+	float: left;
+	margin:  10px 0 0 25px;
+}
+
+#topBar {
+	height: 250px;
+	margin-bottom: 25px;
 }

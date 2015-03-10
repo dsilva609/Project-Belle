@@ -1,29 +1,65 @@
 ﻿@model List<BusinessLogic.Models.Card>
 
-<h1>Cards</h1>
+<div id="topBar">
+	<div class="otherPlayers">
+		<div>
+			Other Players
+		</div>
 
-@for (int i = 0; i < 5; i++)
-{
-	<div id="card" class="card">
-		@Html.DisplayFor(x => Model.ElementAt(i).Name)
+		<div class="player " id="player1">
+			Player 1
+		</div>
+
+		<div class="player" id="player2">
+			Player 2
+		</div>
+
+		<div class="player" id="player3">
+			Player 3
+		</div>
 	</div>
-}
 
-<div class="card green" id="droppable">
-	Drop Zone
+	<div class="burnedCards">
+		Burned Cards
+	</div>
 </div>
 
-<div class="centerPiece">
-	Card Area
-	<div class="deck">
+<div class="deckArea">
+	<div>
 		Deck
 	</div>
-
-	<div class="discard" id="droppable">
-		Discard
-	</div>
 </div>
 
-<div class="mainPlayer">
-	Player Area
+<div id="playerBar">
+	<div class="playedCards">
+		Played Cards
+	</div>
+
+	<div class="turnOrder">
+		<div>
+			Turn Order
+		</div>
+
+		<div>
+			1. Draw
+		</div>
+
+		<div>
+			2. Play
+		</div>
+
+		<div>
+			3. Resolve
+		</div>
+	</div>
+
+	<div class="mainPlayer">
+		<div class="hand">
+			Hand
+		</div>
+
+		<div class="tokensOfAffection">
+			Tokens Of Affection
+		</div>
+	</div>
 </div>
