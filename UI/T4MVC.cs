@@ -116,6 +116,11 @@ namespace Links
                 private const string URLPATH = "~/Scripts/PageSpecific/Card";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string CardDetails_coffee = Url("CardDetails.coffee");
+                public static readonly string CardDetails_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/CardDetails.min.js") ? Url("CardDetails.min.js") : Url("CardDetails.js");
+                public static readonly string CardDetails_js_map = Url("CardDetails.js.map");
+                public static readonly string CardDetails_min_js = Url("CardDetails.min.js");
+                public static readonly string CardDetails_min_js_map = Url("CardDetails.min.js.map");
                 public static readonly string CardIndex_coffee = Url("CardIndex.coffee");
                 public static readonly string CardIndex_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/CardIndex.min.js") ? Url("CardIndex.min.js") : Url("CardIndex.js");
                 public static readonly string CardIndex_js_map = Url("CardIndex.js.map");
@@ -196,6 +201,7 @@ namespace Links
             private const string URLPATH = "~/Content/Images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string CardFace_jpg = Url("CardFace.jpg");
             public static readonly string LoveLetter_jpg = Url("LoveLetter.jpg");
         }
     

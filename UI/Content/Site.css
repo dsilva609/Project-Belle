@@ -1,10 +1,10 @@
 ﻿/* latin */
 @font-face {
-  font-family: 'Arizonia';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Arizonia'), local('Arizonia-Regular'), url(http://fonts.gstatic.com/s/arizonia/v6/PwrsyFTYH2Wmsvpn0dx4s_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+	font-family: 'Arizonia';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Arizonia'), local('Arizonia-Regular'), url(http://fonts.gstatic.com/s/arizonia/v6/PwrsyFTYH2Wmsvpn0dx4s_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 body {
@@ -46,6 +46,15 @@ textarea {
 	cursor: pointer;
 }
 
+.image {
+  font-size: 0;
+  text-align: center;
+  width: 100px;  /* Container's dimensions */
+  height: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .btn-link {
 	height: 20px;
 	vertical-align: top;
@@ -57,7 +66,7 @@ textarea {
 	background-color: saddlebrown;
 	float: left;
 	width: 100px;
-	height: 100px;
+	height: 150px;
 	border: double;
 	z-index: 1;
 }
@@ -130,7 +139,7 @@ textarea {
 	float: left;
 }
 
-.tokensOfAffection{
+.tokensOfAffection {
 	background-color: red;
 	margin-left: 80%;
 	width: 100px;
@@ -177,7 +186,7 @@ textarea {
 	width: 300px;
 	height: 200px;
 	float: left;
-	margin:  10px 0 0 25px;
+	margin: 10px 0 0 25px;
 }
 
 #topBar {
@@ -187,7 +196,7 @@ textarea {
 
 .front, .back {
 	width: 98px;
-	height: 98px;
+	height: 150px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -201,7 +210,10 @@ textarea {
 }
 
 .front {
-	background-color: orange;
+	background-image: url("Images/CardFace.jpg");
+	background-size: cover;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .back {
@@ -219,22 +231,22 @@ textarea {
 	perspective: 1000;
 }
 
-.flipHover:hover .front {
-	background-color: red;
-	position: relative;
-	-o-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-	-webkit-transform: rotateY(180deg);
-	-ms-transform: rotateY(180deg);
-	transform: rotateY(180deg);
-	transform-style: preserve-3d;
-}
+	.flipHover:hover .front {
+		background-color: red;
+		position: relative;
+		-o-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+		-webkit-transform: rotateY(180deg);
+		-ms-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+		transform-style: preserve-3d;
+	}
 
-.flipHover:hover .back {
-	background-color: hotpink;
-	-o-transform: rotateY(0);
-	-moz-transform: rotateY(0);
-	-webkit-transform: rotateY(0);
-	-ms-transform: rotateY(0);
-	transform: rotateY(0);
-}
+	.flipHover:hover .back {
+		background-color: hotpink;
+		-o-transform: rotateY(0);
+		-moz-transform: rotateY(0);
+		-webkit-transform: rotateY(0);
+		-ms-transform: rotateY(0);
+		transform: rotateY(0);
+	}
