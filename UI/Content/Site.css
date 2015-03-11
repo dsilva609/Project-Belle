@@ -186,35 +186,52 @@ textarea {
 }
 
 .front, .back {
+	width: 98px;
+	height: 98px;
+	position: absolute;
+	top: 0;
+	left: 0;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-	-webkit-transition: -webkit-transform 0.3s;
-	-moz-transition: transform 0.3s;
-	-o-transition: transform 0.3s;
-	transition: transform 0.3s;
+	-webkit-transition: transform 0.5s;
+	-moz-transition: transform 0.5s;
+	-o-transition: transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.front {
+	background-color: orange;
 }
 
 .back {
-	-o-transform: rotateY(-180deg);
-	-moz-transform: rotateY(-180deg);
-	-webkit-transform: rotateY(-180deg);
-	-ms-transform: rotateY(-180deg);
-	transform: rotateY(-180deg);
+	-o-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.flipHover {
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	perspective: 1000;
 }
 
 .flipHover:hover .front {
 	background-color: red;
-	-o-transform: rotateY(-180deg);
-	-moz-transform: rotateY(-180deg);
-	-webkit-transform: rotateY(-180deg);
-	-ms-transform: rotateY(-180deg);
-	transform: rotateY(-180deg);
+	position: relative;
+	-o-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	transform-style: preserve-3d;
 }
 
 .flipHover:hover .back {
-	background-color: green;
+	background-color: hotpink;
 	-o-transform: rotateY(0);
 	-moz-transform: rotateY(0);
 	-webkit-transform: rotateY(0);
