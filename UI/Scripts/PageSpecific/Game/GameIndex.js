@@ -7,28 +7,29 @@
     function Index() {}
 
     Index.prototype.init = function() {
-      $("div#card").draggable({
+      $("div.card").draggable({
         revert: true,
         cursor: "move",
         snap: true,
         snapMode: "inner",
         stack: "#card"
       });
-      $("div#card").droppable({
+      $("div.card").droppable({
         stack: "#card",
         drop: function(event, ui) {
           return ui.draggable.insertAfter(this);
         }
       });
-      $("div#droppable").droppable({
+      $("div.droppable").droppable({
         tolerance: "intersect",
-        accept: "#card",
-        stack: "#card",
+        accept: ".card",
+        stack: ".card",
         snap: true,
         snapMode: "inner",
         drop: function(event, ui) {
-          alert("qwefghj");
-          return ui.draggable.insertAfter(this);
+          var target;
+          target = $(event.target);
+          return $(ui.draggable).appendTo(target);
         }
       });
       $(".deck").on("click", function() {
@@ -40,6 +41,7 @@
     };
 
     return Index;
+
   })();
 
   $(document).ready(function() {
@@ -47,6 +49,7 @@
     index = new Views.Game.Index;
     return index.init();
   });
+
 }).call(this);
 
 //# sourceMappingURL=GameIndex.js.map

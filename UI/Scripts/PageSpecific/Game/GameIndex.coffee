@@ -7,7 +7,7 @@ Views.Game.Index = ->
 ##Implementation
 class Views.Game.Index
 	init: ->
-		$("div#card").draggable
+		$("div.card").draggable
 			revert: true
 			cursor: "move"
 			snap: true
@@ -23,21 +23,23 @@ class Views.Game.Index
 #			stack: "#card"
 
 
-		$("div#card").droppable
+		$("div.card").droppable
 			stack: "#card"
 			drop: (event, ui) ->
 				ui.draggable.insertAfter this
 				#$(this).droppable "option", "droppable", false
 						
-		$("div#droppable").droppable 
+		$("div.droppable").droppable 
 			tolerance: "intersect"
-			accept: "#card"
-			stack: "#card"
+			accept: ".card"
+			stack: ".card"
 			snap: true
 			snapMode: "inner"
 			drop: (event, ui) ->
-				alert "qwefghj"
-				ui.draggable.insertAfter this	
+				target = $(event.target);
+				$(ui.draggable).appendTo target
+#				ui.draggable.insertAfter this	
+
 		
 		$(".deck").on "click", ->
 			alert "new card"
