@@ -26,7 +26,7 @@
           snapMode: "inner",
           stack: "#card",
           start: function(event, ui) {
-            return window.dragId = $(event.target).parent().parent().attr('id');
+            return window.dragId = $(event.target).closest("#deck").attr('id');
           },
           stop: function() {
             alert(window.dragId);

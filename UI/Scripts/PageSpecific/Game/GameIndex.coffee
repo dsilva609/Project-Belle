@@ -31,7 +31,7 @@ class Views.Game.Index
 				snapMode: "inner"
 				stack: "#card"
 				start: (event, ui) ->
-					window.dragId = $(event.target).parent().parent().attr('id')
+					window.dragId = $(event.target).closest("#deck").attr('id')
 				stop: ->
 					alert window.dragId
 					if window.dragId is "deck"
