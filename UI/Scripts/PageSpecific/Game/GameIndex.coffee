@@ -5,15 +5,14 @@ Namespace("Views.Game")
 Views.Game.Index = ->
 	$deck = null
 	cardTemplate = null
-	deckIsEmpty = null
 	cardTemplate = null
-
+	dragId = null
+	
 ##Implementation
 class Views.Game.Index
 	init: ->	
 		parent = this
 		window.$deck = $("#deck")
-		window.deckIsEmpty = false;
 		window.cardTemplate = 
 			'<div class="card draggable">' +
 				'<div class="front"></div>' +
@@ -22,6 +21,7 @@ class Views.Game.Index
 					'<span>back</span>' +
 				'</div>' +
 			'</div>'	
+		dragId = ""
 		
 		$("div.card").draggable
 			revert: true
@@ -29,6 +29,13 @@ class Views.Game.Index
 			snap: true
 			snapMode: "inner"
 			stack: "#card"
+			start: (event, ui) ->
+				window.dragId = $(event.target).parent().parent().attr('id')
+			stop: ->
+				alert window.dragId
+				if window.dragId is "deck"
+					alert "empty"
+					parent.populateDeck()
 			#css: "z-index= 9999"
 	
 #		$("div#droppable").draggable
@@ -54,25 +61,12 @@ class Views.Game.Index
 			drop: (event, ui) ->
 				target = $(event.target);
 				$(ui.draggable).appendTo target
-				window.deckIsEmpty = true
-				parent.populateDeck()
 
-		
-#		this.$deck.find("div.cardContainer").draggable
-#			#disabled: true
-#			out: ->
-
-#				$("#deck").find("div.cardContainer").append this.cardTemplate
-#		
-
-#		this.$deck.on "click", ->
-#			alert "new card"
-
+		window.$deck.on "click", ->
+			alert "new card"
 			
 	populateDeck: ->
-		if window.deckIsEmpty is true
 			window.$deck.find("div.cardContainer").append window.cardTemplate
-			window.deckIsEmpty = false
 				
 $(document).ready ->
 	index = new Views.Game.Index

@@ -2,28 +2,38 @@
   Namespace("Views.Game");
 
   Views.Game.Index = function() {
-    var $deck, cardTemplate, deckIsEmpty;
+    var $deck, cardTemplate, dragId;
     $deck = null;
     cardTemplate = null;
-    deckIsEmpty = null;
-    return cardTemplate = null;
+    cardTemplate = null;
+    return dragId = null;
   };
 
   Views.Game.Index = (function() {
     function Index() {}
 
     Index.prototype.init = function() {
-      var parent;
+      var dragId, parent;
       parent = this;
       window.$deck = $("#deck");
-      window.deckIsEmpty = false;
       window.cardTemplate = '<div class="card draggable">' + '<div class="front"></div>' + '<div class="back">' + '<span>back</span>' + '</div>' + '</div>';
+      dragId = "";
       $("div.card").draggable({
         revert: true,
         cursor: "move",
         snap: true,
         snapMode: "inner",
-        stack: "#card"
+        stack: "#card",
+        start: function(event, ui) {
+          return window.dragId = $(event.target).parent().parent().attr('id');
+        },
+        stop: function() {
+          alert(window.dragId);
+          if (window.dragId === "deck") {
+            alert("empty");
+            return parent.populateDeck();
+          }
+        }
       });
       $("div.card").droppable({
         stack: "#card",
@@ -31,7 +41,7 @@
           return ui.draggable.insertAfter(this);
         }
       });
-      return $("div.droppable").droppable({
+      $("div.droppable").droppable({
         tolerance: "intersect",
         accept: ".card",
         stack: ".card",
@@ -40,18 +50,16 @@
         drop: function(event, ui) {
           var target;
           target = $(event.target);
-          $(ui.draggable).appendTo(target);
-          window.deckIsEmpty = true;
-          return parent.populateDeck();
+          return $(ui.draggable).appendTo(target);
         }
+      });
+      return window.$deck.on("click", function() {
+        return alert("new card");
       });
     };
 
     Index.prototype.populateDeck = function() {
-      if (window.deckIsEmpty === true) {
-        window.$deck.find("div.cardContainer").append(window.cardTemplate);
-        return window.deckIsEmpty = false;
-      }
+      return window.$deck.find("div.cardContainer").append(window.cardTemplate);
     };
 
     return Index;
