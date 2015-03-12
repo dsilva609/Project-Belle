@@ -18,22 +18,24 @@
       window.$deck = $("#deck");
       window.cardTemplate = '<div class="card draggable">' + '<div class="front"></div>' + '<div class="back">' + '<span>back</span>' + '</div>' + '</div>';
       dragId = "";
-      $("div.card").draggable({
-        revert: true,
-        cursor: "move",
-        snap: true,
-        snapMode: "inner",
-        stack: "#card",
-        start: function(event, ui) {
-          return window.dragId = $(event.target).parent().parent().attr('id');
-        },
-        stop: function() {
-          alert(window.dragId);
-          if (window.dragId === "deck") {
-            alert("empty");
-            return parent.populateDeck();
+      $("div.cardContainer").on("mouseover", "div.card", function() {
+        return $(this).draggable({
+          revert: true,
+          cursor: "move",
+          snap: true,
+          snapMode: "inner",
+          stack: "#card",
+          start: function(event, ui) {
+            return window.dragId = $(event.target).parent().parent().attr('id');
+          },
+          stop: function() {
+            alert(window.dragId);
+            if (window.dragId === "deck") {
+              alert("empty");
+              return parent.populateDeck();
+            }
           }
-        }
+        });
       });
       $("div.card").droppable({
         stack: "#card",

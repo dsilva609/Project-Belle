@@ -23,19 +23,20 @@ class Views.Game.Index
 			'</div>'	
 		dragId = ""
 		
-		$("div.card").draggable
-			revert: true
-			cursor: "move"
-			snap: true
-			snapMode: "inner"
-			stack: "#card"
-			start: (event, ui) ->
-				window.dragId = $(event.target).parent().parent().attr('id')
-			stop: ->
-				alert window.dragId
-				if window.dragId is "deck"
-					alert "empty"
-					parent.populateDeck()
+		$("div.cardContainer").on "mouseover", "div.card", ->
+			$(this).draggable
+				revert: true
+				cursor: "move"
+				snap: true
+				snapMode: "inner"
+				stack: "#card"
+				start: (event, ui) ->
+					window.dragId = $(event.target).parent().parent().attr('id')
+				stop: ->
+					alert window.dragId
+					if window.dragId is "deck"
+						alert "empty"
+						parent.populateDeck()
 			#css: "z-index= 9999"
 	
 #		$("div#droppable").draggable
