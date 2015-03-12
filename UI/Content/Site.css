@@ -73,21 +73,13 @@ textarea {
 	margin-top: 10px;
 }
 
-
 .droppable {
 	/*float: left;*/
 	z-index: 0;
 }
 
-.deck {
+#deck {
 	/*margin-left: 50px;*/
-}
-
-.discard {
-	background-color: gray;
-	width: 100px;
-	height: 125px;
-	margin: -155px 0 0 220px;
 }
 
 .turnOrder {

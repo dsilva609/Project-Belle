@@ -1,12 +1,23 @@
 ﻿(function() {
   Namespace("Views.Game");
 
-  Views.Game.Index = function() {};
+  Views.Game.Index = function() {
+    var $deck, cardTemplate, deckIsEmpty;
+    $deck = null;
+    cardTemplate = null;
+    deckIsEmpty = null;
+    return cardTemplate = null;
+  };
 
   Views.Game.Index = (function() {
     function Index() {}
 
     Index.prototype.init = function() {
+      var parent;
+      parent = this;
+      window.$deck = $("#deck");
+      window.deckIsEmpty = false;
+      window.cardTemplate = '<div class="card draggable">' + '<div class="front"></div>' + '<div class="back">' + '<span>back</span>' + '</div>' + '</div>';
       $("div.card").draggable({
         revert: true,
         cursor: "move",
@@ -20,7 +31,7 @@
           return ui.draggable.insertAfter(this);
         }
       });
-      $("div.droppable").droppable({
+      return $("div.droppable").droppable({
         tolerance: "intersect",
         accept: ".card",
         stack: ".card",
@@ -29,15 +40,18 @@
         drop: function(event, ui) {
           var target;
           target = $(event.target);
-          return $(ui.draggable).appendTo(target);
+          $(ui.draggable).appendTo(target);
+          window.deckIsEmpty = true;
+          return parent.populateDeck();
         }
       });
-      $(".deck").on("click", function() {
-        return alert("new card");
-      });
-      return $(".discard").on("click", function() {
-        return alert("Send 'em to the brig!");
-      });
+    };
+
+    Index.prototype.populateDeck = function() {
+      if (window.deckIsEmpty === true) {
+        window.$deck.find("div.cardContainer").append(window.cardTemplate);
+        return window.deckIsEmpty = false;
+      }
     };
 
     return Index;

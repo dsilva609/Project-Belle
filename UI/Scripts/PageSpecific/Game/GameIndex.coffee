@@ -3,10 +3,26 @@ Namespace("Views.Game")
 
 #Initialization
 Views.Game.Index = ->
+	$deck = null
+	cardTemplate = null
+	deckIsEmpty = null
+	cardTemplate = null
 
 ##Implementation
 class Views.Game.Index
-	init: ->
+	init: ->	
+		parent = this
+		window.$deck = $("#deck")
+		window.deckIsEmpty = false;
+		window.cardTemplate = 
+			'<div class="card draggable">' +
+				'<div class="front"></div>' +
+
+				'<div class="back">' +
+					'<span>back</span>' +
+				'</div>' +
+			'</div>'	
+		
 		$("div.card").draggable
 			revert: true
 			cursor: "move"
@@ -38,16 +54,26 @@ class Views.Game.Index
 			drop: (event, ui) ->
 				target = $(event.target);
 				$(ui.draggable).appendTo target
-#				ui.draggable.insertAfter this	
+				window.deckIsEmpty = true
+				parent.populateDeck()
 
 		
-		$(".deck").on "click", ->
-			alert "new card"
+#		this.$deck.find("div.cardContainer").draggable
+#			#disabled: true
+#			out: ->
+
+#				$("#deck").find("div.cardContainer").append this.cardTemplate
+#		
+
+#		this.$deck.on "click", ->
+#			alert "new card"
+
 			
-		$(".discard").on "click", ->
-			alert "Send 'em to the brig!"
-					     			     
-                				
+	populateDeck: ->
+		if window.deckIsEmpty is true
+			window.$deck.find("div.cardContainer").append window.cardTemplate
+			window.deckIsEmpty = false
+				
 $(document).ready ->
 	index = new Views.Game.Index
 	
