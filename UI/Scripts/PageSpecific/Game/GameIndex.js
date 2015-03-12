@@ -18,6 +18,12 @@
       window.$deck = $("#deck");
       window.cardTemplate = '<div class="card draggable">' + '<div class="front"></div>' + '<div class="back">' + '<span>back</span>' + '</div>' + '</div>';
       dragId = "";
+      window.$deck.on("click", function() {
+        var card;
+        card = window.$deck.find("div.card").detach().hide();
+        card.appendTo("#openSlot").show("slow");
+        return parent.populateDeck();
+      });
       $("div.cardContainer").on("mouseover", "div.card", function() {
         return $(this).draggable({
           revert: true,
@@ -29,9 +35,7 @@
             return window.dragId = $(event.target).closest("#deck").attr('id');
           },
           stop: function() {
-            alert(window.dragId);
             if (window.dragId === "deck") {
-              alert("empty");
               return parent.populateDeck();
             }
           }
@@ -43,7 +47,7 @@
           return ui.draggable.insertAfter(this);
         }
       });
-      $("div.droppable").droppable({
+      return $("div.droppable").droppable({
         tolerance: "intersect",
         accept: ".card",
         stack: ".card",
@@ -55,13 +59,11 @@
           return $(ui.draggable).appendTo(target);
         }
       });
-      return window.$deck.on("click", function() {
-        return alert("new card");
-      });
     };
 
     Index.prototype.populateDeck = function() {
-      return window.$deck.find("div.cardContainer").append(window.cardTemplate);
+      $(window.cardTemplate).appendTo("#deck div:eq(0)");
+      return window.$deck.find("div.card").hide().fadeIn("slow");
     };
 
     return Index;

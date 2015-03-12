@@ -23,6 +23,11 @@ class Views.Game.Index
 			'</div>'	
 		dragId = ""
 		
+		window.$deck.on "click", ->
+			card = window.$deck.find("div.card").detach().hide()
+			card.appendTo("#openSlot").show "slow"
+			parent.populateDeck()
+		
 		$("div.cardContainer").on "mouseover", "div.card", ->
 			$(this).draggable
 				revert: true
@@ -33,11 +38,8 @@ class Views.Game.Index
 				start: (event, ui) ->
 					window.dragId = $(event.target).closest("#deck").attr('id')
 				stop: ->
-					alert window.dragId
 					if window.dragId is "deck"
-						alert "empty"
 						parent.populateDeck()
-			#css: "z-index= 9999"
 	
 #		$("div#droppable").draggable
 #			revert: true
@@ -62,13 +64,11 @@ class Views.Game.Index
 			drop: (event, ui) ->
 				target = $(event.target);
 				$(ui.draggable).appendTo target
-
-		window.$deck.on "click", ->
-			alert "new card"
 			
-	populateDeck: ->
-			window.$deck.find("div.cardContainer").append window.cardTemplate
-				
+	populateDeck: ->		
+		$(window.cardTemplate).appendTo("#deck div:eq(0)")
+		window.$deck.find("div.card").hide().fadeIn "slow"
+		
 $(document).ready ->
 	index = new Views.Game.Index
 	
